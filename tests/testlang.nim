@@ -1,10 +1,10 @@
 import nimfastText/fasttext
-import ospaths
+# import ospaths
 import os
 import streams
 
-var ft: FastText
-const langModel = unixToNativePath("tests" / "lid.176.ftz")
-# let s = newFileStream(langModel,fmRead)
+var ft = constructFastText()
+
+let langModel = unixToNativePath("tests" / "lid.176.ftz")
 
 ft.loadModel(langModel)
