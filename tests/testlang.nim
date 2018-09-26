@@ -3,8 +3,9 @@ import nimfastText/fasttext
 import os
 import streams
 
-var ft = constructFastText()
 
-let langModel = unixToNativePath("tests" / "lid.176.ftz")
+var ft:FastText
 
-ft.loadModel(langModel)
+const langModel:cstring = unixToNativePath("tests" / "lid.176.ftz")
+
+ft.loadModel( constructStdString(langModel) )
